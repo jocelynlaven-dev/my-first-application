@@ -1,0 +1,143 @@
+Update the existing web application:
+
+“Personal Board of Directors”
+
+Enhance the app by expanding the number of personas, adding randomness, and improving the user interaction experience.
+
+🎯 Core Updates
+1. Expand Personas to 25 Total
+
+Add 20 new personas to the existing 5.
+
+Personas should be:
+
+Friendly and inclusive
+Non-offensive
+A mix of:
+Thoughtful / wise
+Practical
+Funny / lighthearted
+Slightly quirky but still useful
+Existing Personas (Keep):
+The Stoic
+The Capital Allocator
+Future You (Age 55)
+The 10-Year-Old
+The Pragmatist
+Add These New Personas:
+The Optimist (sees opportunity everywhere)
+The Realist (grounded, balanced perspective)
+The Therapist (emotionally aware, reflective)
+The Best Friend (supportive, honest, caring)
+The Skeptic (questions everything)
+The Minimalist (simplify your life)
+The Adventurer (encourages bold action)
+The Historian (lessons from the past)
+The Coach (motivational, action-oriented)
+The Scientist (logic, evidence-based)
+The Artist (creative, expressive thinking)
+The Comedian (light, humorous take but still insightful)
+The Grandma/Grandparent (warm, wise, life perspective)
+The CEO (big picture, strategic thinking)
+The Time Traveler (future consequences focus)
+The Negotiator (win-win thinking)
+The Risk Manager (what could go wrong)
+The Spiritual Guide (meaning, purpose, alignment)
+The Busy Parent (practical, time-constrained lens)
+The Lazy Genius (minimum effort, maximum result)
+
+Each persona should have:
+
+A clear tone
+A consistent perspective
+Distinct voice in responses
+2. Random Persona Selection (Important)
+
+Each time a user submits a question:
+
+Randomly select 6 personas out of the total 25
+Ensure no duplicates
+Ensure a mix of tones if possible (not all serious or all silly)
+3. Always Return 6 Responses
+
+For every question:
+
+Display exactly 6 persona responses
+Each response appears in its own card
+4. Add “Cycle Perspectives” Button (Key Feature)
+
+On the results page, add a button:
+
+👉 “Show Different Perspectives”
+
+When clicked:
+
+Keep the SAME user question
+Randomly select a NEW set of 6 personas
+Call the backend again
+Replace the current responses with new ones
+Do NOT require the user to re-enter the question
+5. Backend Updates
+
+Update the AI prompt to:
+
+Accept a list of 6 selected personas
+Generate structured responses for each
+Maintain consistent formatting:
+
+Each response should include:
+
+Summary
+Advice
+One Thought-Provoking Question
+
+Return structured JSON like:
+
+{
+"responses": [
+{
+"persona": "The Stoic",
+"summary": "...",
+"advice": "...",
+"question": "..."
+}
+]
+}
+
+6. UI Improvements
+
+Enhance the results page:
+
+Display persona name prominently
+Optional: small emoji or icon per persona (fun but subtle)
+Use card layout:
+Rounded corners
+Soft shadows
+Clean spacing
+
+Add:
+
+Smooth fade/transition when new personas load
+Loading indicator when generating responses
+7. Maintain Existing Design Quality
+
+Keep the app:
+
+Clean
+Modern
+Thoughtful (not gimmicky)
+
+Avoid making it feel childish even with fun personas.
+
+8. Code Requirements
+Keep persona definitions centralized (array or config file)
+Clean separation between:
+Persona selection logic
+API call
+UI rendering
+Comment key sections (especially randomness + cycling logic)
+Bonus (If Possible)
+Prevent immediate repeat personas when cycling
+Add subtle animation when cards refresh
+Add small label like:
+“6 of 25 perspectives”

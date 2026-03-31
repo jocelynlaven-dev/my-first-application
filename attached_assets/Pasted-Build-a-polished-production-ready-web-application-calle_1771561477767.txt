@@ -1,0 +1,175 @@
+Build a polished, production-ready web application called:
+
+“Personal Board of Directors”
+Purpose
+
+This app allows a user to input a real-life decision they are considering. The app then consults a simulated “board of directors” made up of distinct AI personas. Each persona gives structured advice from a different worldview.
+
+The app should feel elegant, modern, and thoughtful — not playful or gimmicky.
+
+This is a personal decision-support tool, not a work-related tool.
+
+Tech Stack Requirements
+
+Backend: Python with Flask
+
+Frontend: HTML + CSS (clean and modern)
+
+Use OpenAI API (via environment variable for API key)
+
+Return structured responses
+
+Organize responses by persona in styled cards
+
+UI / UX Requirements (Very Important)
+
+The design should feel polished and modern.
+
+Layout:
+
+Centered container
+
+Soft neutral gradient background (subtle)
+
+Clean typography (modern sans-serif)
+
+Large title at top
+
+Input text area
+
+“Consult the Board” button
+
+Loading state while generating
+
+Response section below in a grid of cards
+
+Styling:
+
+Rounded corners (12–16px radius)
+
+Soft drop shadows on cards
+
+Plenty of white space
+
+Responsive layout
+
+Button hover animation
+
+Subtle transitions
+
+Make it look like a minimal SaaS product.
+
+App Behavior
+Input:
+
+A large textarea where user types:
+
+“What decision are you considering?”
+
+Example:
+“Should I start a side business while working full time?”
+
+On Submit:
+
+The app sends the decision text to the backend.
+The backend calls the OpenAI API.
+The API returns structured responses from each persona.
+Display them in separate cards.
+
+AI Personas
+
+Each persona must respond distinctly.
+
+Use structured formatting like:
+
+Summary:
+Risks:
+Opportunities:
+Advice:
+One Hard Question:
+
+1. The Stoic
+
+Tone: Calm, disciplined, virtue-focused.
+Focus on what is within control, character, long-term virtue.
+Channel Marcus Aurelius style but modern language.
+
+2. The Capital Allocator
+
+Tone: Strategic, ROI-focused.
+Think like a rational investor.
+Evaluate time, energy, capital allocation.
+Discuss upside vs downside.
+
+3. Future You (Age 55)
+
+Tone: Warm, reflective, wise.
+Focus on regret minimization.
+Long-term identity.
+Life perspective.
+
+4. The 10-Year-Old
+
+Tone: Simple, honest, emotionally intuitive.
+Ask innocent but powerful questions.
+Point out obvious truths adults ignore.
+
+5. The Pragmatist
+
+Tone: Direct, realistic, grounded.
+What’s actually doable.
+What would make this easier.
+What first step removes uncertainty.
+
+Backend Prompt Structure
+
+Construct a single structured prompt like:
+
+“You are simulating a Personal Board of Directors. For the following decision, generate responses from five distinct personas…”
+
+Then clearly define each persona and require labeled sections.
+
+Ensure the model outputs in JSON format like:
+
+{
+"stoic": { ... },
+"capital_allocator": { ... },
+"future_you": { ... },
+"ten_year_old": { ... },
+"pragmatist": { ... }
+}
+
+Then parse and render each cleanly in the frontend.
+
+Additional Features
+
+Show loading spinner while generating
+
+Handle API errors gracefully
+
+Require environment variable:
+OPENAI_API_KEY
+
+Clean code organization
+
+Comment code clearly
+
+Ensure app runs locally in Replit
+
+File Structure
+
+app.py
+templates/index.html
+static/style.css
+
+Use Flask templating.
+
+Bonus (If Possible)
+
+Add subtle fade-in animation for results
+
+Add “Consult Again” button
+
+Preserve previous decision until refreshed
+
+The final product should look like a thoughtful, modern micro-SaaS decision tool. It should feel intelligent, clean, and intentional.
